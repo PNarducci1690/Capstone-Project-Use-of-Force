@@ -1,0 +1,13 @@
+# Capstone Project: Use of Force by IMPD Officers
+
+## Introduction
+
+On May 25, 2020, George Floyd, and African-American man, was murdered by Derek Chauvin, a white Minneapolis police officer. George Floyd's death sparked protests against systemic racism and police brutality worldwide, leading to many governments worldwide to take a closer look at police officer training and immunity. On April 20, 2020, Derek Chauvin was found guilty on all charges and is currently waiting conviction. Geroge Floyd's tragedy, and other trajedy's like it, have shown that policing within the United States needs to be reformed in order to best protect communites that are succeptable to over poliing and racial profiling. 
+
+My project takes a look at use of force by the Indiananpolis Metropolitan Police Department (IMPD) in order to create a model that can be used by Indianapolis in order to help them create better and stronger reforms for their police deaprtments. I decided to work with this dataset because it is the most transparent and fleshed use of force dataset out there. It is very hard to find a viable use of force dataset since they are relatively new, the data that is documented is either limited do to state laws or very unorganized. This dataset was messy, but it contained many categories with information that could be used to build a strong model that can determine what factors could lead to an incident where an officer uses force. 
+
+## Results
+
+I built my models around a multi-class classification problem that used various features to determine what kind of use of force a police oficer was using during a policing incident. These classifications, as designated by the IMPD, were physical force, less lethal force, and lethal force. These designations had to be created, and were done so by researching what the IMPD considers physical, lethal, and less lethal, and then recategorizing the tactics used by the officer to against the civilian during this use of force incident. In order to create a good model, I used k-Nearest Neighbors, Naive Bayes, Decision Tree, Random Forest, and XGBoost. I chose these models because they are considered powerful algorithms to use when it comes to run a model on multi-class classification data.
+
+The best model was my XGboost which produced an f1 score of 93.52, I chose f1 as my accuracy score over accuracy score because a multi-class classification model comes with imbalances, and the target with the majority of the values normally sways the accuracy score in its direction, thus producing a more biased model. The f1 score uses the harmonic mean of each target variable in order to try and create a more balanced score in order to fairly weigh the model. 
