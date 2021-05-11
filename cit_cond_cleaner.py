@@ -1,4 +1,14 @@
 def cit_cond(df, x):
+     '''
+    Function that perfomrs additional cleaning for citizen condition type
+    
+    Args:
+       df (dataframe)
+       x is column from dataframe
+       
+   Returns:
+      Reorganized and cleaned dataset where similar conditions are categorized into one generic category
+    '''
     df.loc[x.str.contains('none|no injury'), 'cit_cond_type'] = 'no injuries noted or visible'
     df.loc[x.str.contains('broken|fractured|dislocated|tooth'), 'cit_cond_type'] = 'broken, fractured, and dislocated bones'
     df.loc[x.str.contains('scrape|marks|loss|abrasion|scratch|burn'), 'cit_cond_type'] = 'abrasions'

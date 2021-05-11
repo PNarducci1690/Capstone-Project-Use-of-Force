@@ -1,5 +1,15 @@
 
 def cit_charge(df, x):
+    '''
+    Function that perfomrs additional cleaning for citizen charge type
+    
+    Args:
+       df (dataframe)
+       x is column from dataframe
+       
+   Returns:
+      Reorganized and cleaned dataset where similar charges are categorized into one generic category
+    '''
     df.loc[x.str.contains('resist'), 'citcharge_type'] = 'resisting arrest'
     df.loc[x.str.contains('battery|assault|strangulation'), 'citcharge_type'] = 'assault and battery'
     df.loc[x.str.contains('lifting|stolen|rob|fraud|forgery|conversion|burglary'), 'citcharge_type'] = 'theft'

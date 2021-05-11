@@ -1,4 +1,14 @@
 def off_cond(df, x):
+     '''
+    Function that perfomrs additional cleaning for officer condition type
+    
+    Args:
+       df (dataframe)
+       x is column from dataframe
+       
+   Returns:
+      Reorganized and cleaned dataset where similar conditions are categorized into one generic category
+    '''
     df.loc[x.str.contains('none|no inj|pulled away|nothing'), 'off_cond_type'] = 'no injuries noted or visible'
     df.loc[x.str.contains('broken|fractured|dislocated|tooth'), 'off_cond_type'] = 'broken, fractured, and dislocated bones'
     df.loc[x.str.contains('scrape|marks|abrasion|scratch'), 'off_cond_type'] = 'abrasions'
